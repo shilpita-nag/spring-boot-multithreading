@@ -2,8 +2,15 @@ package com.example.car;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.EnableLoadTimeWeaving;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+import javax.persistence.Entity;
 
 @SpringBootApplication
+@EnableJpaRepositories("com.example.car.repo")
+@EntityScan("com.example.car.model")
 public class CarApplication {
 
 	public static void main(String[] args) {
